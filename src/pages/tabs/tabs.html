@@ -1,5 +1,12 @@
-<ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
-</ion-tabs>
+<div style="width: 100%; height: 56px; position: relative;">
+
+  <ion-icon name="ios-menu-outline" class="tabs-top-btns menu-btn">
+  </ion-icon>
+  <ion-icon name="ios-search-outline" class="tabs-top-btns search-btn" (click)="goToSearchPage()">
+  </ion-icon>
+
+  <ion-tabs tabsPlacement="top" no-border color="primary">
+    <ion-tab [root]="tab1Root" tabTitle="Home"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Play"></ion-tab>
+  </ion-tabs>
+</div>

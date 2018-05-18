@@ -1,0 +1,19 @@
+page-tabs {
+    .tabs-top-btns {
+        z-index: 999;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);   
+        min-width: .9em;
+        color: color($colors, text-light);   
+        font-size: 1.8em;
+        padding: 0 .1em;
+        &.menu-btn {
+            left: 6px;     
+        }    
+        &.search-btn {
+            right: 6px;  
+        }        
+    }
+
+}
