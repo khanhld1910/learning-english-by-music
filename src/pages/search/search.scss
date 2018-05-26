@@ -1,3 +1,53 @@
 page-search {
+    #search-list {
+        position: absolute;
+        top: 58px;
+        right: 0px;
+        margin: 0px 8px 5px 8px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        width: calc(100% - 71px);
+        overflow-y: scroll;
+        z-index: 999;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        visibility: hidden;
+        height: 0;
+        max-height: calc(60% - 58px);
+        transition: all 0.5s ease;
+        &.show {
+            visibility: visible;
+            height: calc(60% - 58px);
+        }
+    }
+    .header {
+        position: relative;
+    } 
+    
+    * {
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+        width: 0px;  /* remove scrollbar space */
+        background: transparent;  /* optional: just make scrollbar invisible */
+    }
+    /* optional: show position indicator in red */
+    ::-webkit-scrollbar-thumb {
+        background: #FF0000;
+    }
 
+    #overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 998;
+        background: transparent;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        transition: all 0.5s ease;
+        &.show {
+            visibility: visible;
+            background: rgba(0,0,0,0.6);
+        }
+    }
 }

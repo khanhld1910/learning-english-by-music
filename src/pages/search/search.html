@@ -1,9 +1,107 @@
 <ion-header no-border>
   <ion-navbar>
-    <ion-title>Search</ion-title>
+    <ion-searchbar #searchbar [(ngModel)]="keyword" (ionInput)="seachingSongs($event)" (ionCancel)="onCancel($event)" no-border>
+    </ion-searchbar>
   </ion-navbar>
 </ion-header>
 
+<ion-list id="search-list" [class.show]="searchMode===true">
+    <ion-item>
+      <ion-row>
+        <ion-col col-8>
+          <h2>Tunnel Of Love</h2>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8>
+          <h3>Dire Straits</h3>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>36
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-8>
+          <h2>Tunnel Of Love</h2>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8>
+          <h3>Dire Straits</h3>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>36
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-8>
+          <h2>Tunnel Of Love</h2>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8>
+          <h3>Dire Straits</h3>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>36
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-8>
+          <h2>Tunnel Of Love</h2>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8>
+          <h3>Dire Straits</h3>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>36
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-8>
+          <h2>Tunnel Of Love</h2>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8>
+          <h3>Dire Straits</h3>
+        </ion-col>
+        <ion-col col-3 offset-1>
+          <ion-icon name="menu"></ion-icon>36
+        </ion-col>
+      </ion-row>
+    </ion-item>
+</ion-list>
+
 <ion-content padding>
-  <h2>search page</h2>
+  <div id="overlay" [class.show]="searchMode===true" (click)="closeSearchList()">
+  </div>
+  <h1>
+    Luong Duy Khanh
+  </h1>
 </ion-content>

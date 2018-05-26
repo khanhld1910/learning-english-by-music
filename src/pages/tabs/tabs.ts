@@ -13,9 +13,7 @@ export class TabsPage {
 
   constructor(
     private navCtrll: NavController
-  ) {
-
-  }
+  ) { }
 
   goToSearchPage() {
     this.navCtrll.push('SearchPage')

@@ -8,6 +8,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  private song = `Luong<br> Duy Khanh`
+
   constructor(public navCtrl: NavController) {
 
   }

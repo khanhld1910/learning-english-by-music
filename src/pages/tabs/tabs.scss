@@ -2,7 +2,7 @@ page-tabs {
     .tabs-top-btns {
         z-index: 999;
         position: absolute;
-        top: 50%;
+        top: 28px;
         transform: translateY(-50%);   
         min-width: .9em;
         color: color($colors, text-light);   
@@ -14,6 +14,15 @@ page-tabs {
         &.search-btn {
             right: 6px;  
         }        
+        &:active {
+            color: lighten(color($colors, text-light), 15%);
+        }
+    }
+    
+    .tabs .tab-button {
+        &[aria-selected=true] { 
+            background-color: rgba(0,0,0,0.1);    
+        }
     }
 
 }
