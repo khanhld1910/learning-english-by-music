@@ -1,5 +1,26 @@
+<ion-content>
+	<div id="player" data-plyr-provider="youtube" [attr.data-plyr-embed-id]="this.playerData.song ? this.playerData.song.link : 'bTqVqk7FSmY'"></div>
 
-
-<ion-content padding>
+	<div id="lyric-panel">
+		<p *ngFor="let line of lyric.lines">
+			{{line.text}}
+		</p>
+	</div>
+	<button (click)="test()">
+		test
+	</button>
 
 </ion-content>
+
+<ion-footer no-border-bottom>
+	<ion-toolbar>
+		<ion-segment [(ngModel)]="mode" color="secondary">
+			<ion-segment-button value="play">
+				Learn mode
+			</ion-segment-button>
+			<ion-segment-button value="karaoke">
+				Karaoke mode
+			</ion-segment-button>
+		</ion-segment>
+	</ion-toolbar>
+</ion-footer>

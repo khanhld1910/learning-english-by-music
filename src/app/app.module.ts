@@ -13,6 +13,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'
 import firebase from 'firebase/app';
 import 'firebase/functions';
 import { AppProvider } from '../providers/app/app';
+import { YoutubeServiceProvider } from '../providers/youtube-service/youtube-service';
 firebase.initializeApp(firebaseConfig);
 
 @NgModule({
@@ -34,6 +35,7 @@ firebase.initializeApp(firebaseConfig);
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AppProvider,
+    YoutubeServiceProvider,
   ]
 })
 export class AppModule {}

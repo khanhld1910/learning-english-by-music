@@ -1,3 +1,19 @@
 page-player {
+    #player {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+    #lyric-panel {
+        width: 100%;
+        height: 30vh;
+        overflow-y: scroll;
+        p {
+            text-align: center;
+        }
+    }
+    .footer .toolbar .toolbar-background {
+        background-color: #fff;
+    }
 
 }

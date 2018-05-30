@@ -1,101 +1,25 @@
-<ion-header no-border>
+<ion-header no-border >
   <ion-navbar>
-    <ion-searchbar #searchbar [(ngModel)]="keyword" (ionInput)="seachingSongs($event)" (ionCancel)="onCancel($event)" no-border>
+    <ion-searchbar #searchbar [(ngModel)]="keyword" (ionInput)="searchbarGenerate($event)" placeholder="artist or song title"
+      no-border>
     </ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-list id="search-list" [class.show]="searchMode===true">
-    <ion-item>
-      <ion-row>
-        <ion-col col-8>
-          <h2>Tunnel Of Love</h2>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-8>
-          <h3>Dire Straits</h3>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>36
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col col-8>
-          <h2>Tunnel Of Love</h2>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-8>
-          <h3>Dire Straits</h3>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>36
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col col-8>
-          <h2>Tunnel Of Love</h2>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-8>
-          <h3>Dire Straits</h3>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>36
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col col-8>
-          <h2>Tunnel Of Love</h2>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-8>
-          <h3>Dire Straits</h3>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>36
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col col-8>
-          <h2>Tunnel Of Love</h2>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-8>
-          <h3>Dire Straits</h3>
-        </ion-col>
-        <ion-col col-3 offset-1>
-          <ion-icon name="menu"></ion-icon>36
-        </ion-col>
-      </ion-row>
-    </ion-item>
+  <ion-item *ngFor="let song of searchList" (click)="play(song)">
+    <h2>{{song.title}}</h2>
+    <p>{{song.artist}}</p>
+    <p item-end>{{song.playcounts}}</p>
+  </ion-item>
+  <ion-item *ngIf="searchList.length === 0">
+    <h2>no result!</h2>
+  </ion-item>
 </ion-list>
 
 <ion-content padding>
