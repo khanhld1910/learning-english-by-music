@@ -3,26 +3,27 @@ page-tabs {
         z-index: 999;
         position: absolute;
         top: 28px;
-        transform: translateY(-50%);   
+        transform: translateY(-50%);
         min-width: .9em;
-        color: color($colors, text-light);   
+        color: rgba($color: color($colors, text-light), $alpha: 0.7);
         font-size: 1.8em;
         padding: 0 .1em;
         &.menu-btn {
-            left: 6px;     
-        }    
+            left: 6px;
+        }
         &.search-btn {
-            right: 6px;  
-        }        
+            right: 6px;
+        }
         &:active {
             color: lighten(color($colors, text-light), 15%);
         }
     }
-    
     .tabs .tab-button {
-        &[aria-selected=true] { 
-            background-color: rgba(0,0,0,0.1);    
+        &[aria-selected=true] {
+            background-color: rgba(255, 255, 255, 0.1);
         }
     }
-
+    .tabbar {
+        border-bottom: 1px solid rgba($color: color($colors, text-light), $alpha: 0.2);
+    }
 }

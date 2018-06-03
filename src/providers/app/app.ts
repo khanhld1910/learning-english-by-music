@@ -8,24 +8,6 @@ import firebase from 'firebase/app'
 import { Song } from '../../interfaces/Song'
 import LRC from 'lrc.js'
 
-export interface Lyric {
-  al: string,
-  ar: string,
-  au: string,
-  ti: string,
-  by: string,
-  offset: number,
-  length: string,
-  re: string,
-  ve: string,
-  lines: [
-    {
-      time: number,
-      text: string,
-    }
-  ]
-}
-
 @Injectable()
 export class AppProvider {
   private db = firebase.database()
@@ -50,7 +32,7 @@ export class AppProvider {
 
   lyricParse(lrcString) {
     let formated = lrcString.replace(/([^\]])\[/g, "$1\n[")
-    const lyrics: Lyric = LRC.parse(formated)
+    const lyrics = LRC.parse(formated)
     return lyrics
   }
 

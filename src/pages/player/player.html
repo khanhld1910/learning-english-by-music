@@ -1,25 +1,30 @@
-<ion-content>
-	<div id="player" data-plyr-provider="youtube" [attr.data-plyr-embed-id]="this.playerData.song ? this.playerData.song.link : 'bTqVqk7FSmY'"></div>
+<ion-content #content>
+	<div id="player-box">
+		<div id="player" data-plyr-provider="youtube" [attr.data-plyr-embed-id]="this.playerData.song ? this.playerData.song.link : 'bTqVqk7FSmY'"></div>
+	</div>
+	<div class="head-fade"></div>
 
 	<div id="lyric-panel">
-		<p *ngFor="let line of lyric.lines">
-			{{line.text}}
-		</p>
+		<ng-container *ngIf="mode==='play'">
+			<p *ngFor="let line of lyric.lines; let i = index" [class.active]="i == currIndex">
+				{{line.text}}
+			</p>
+		</ng-container>
+		<ng-container *ngIf="mode==='karaoke'">
+			<p>Karaoke</p>
+		</ng-container>
 	</div>
-	<button (click)="test()">
-		test
-	</button>
-
+	<div class="foot-fade"></div>
 </ion-content>
 
 <ion-footer no-border-bottom>
 	<ion-toolbar>
-		<ion-segment [(ngModel)]="mode" color="secondary">
+		<ion-segment [(ngModel)]="mode" color="primary">
 			<ion-segment-button value="play">
-				Learn mode
+				Learning
 			</ion-segment-button>
 			<ion-segment-button value="karaoke">
-				Karaoke mode
+				Karaoke
 			</ion-segment-button>
 		</ion-segment>
 	</ion-toolbar>

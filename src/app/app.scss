@@ -12,12 +12,43 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@font-face {
+    font-family: 'Neon';
+    src: url('../assets/fonts/Neon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quesha';
+    src: url('../assets/fonts/Quesha.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BiggerLove';
+    src: url('../assets/fonts/BiggerLove.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Handlee';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/Handlee.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 .header {
     * {
-        color: color($colors, text-light);
+        color: rgba(color($colors, text-light), $alpha: 0.7);
     }
     .toolbar-background {
-        background: color($colors, primary);
+        //background: color($colors, primary);
+        background: rgba(0, 0, 0, 1);
     }
 }
 
@@ -28,4 +59,23 @@
 ::-webkit-scrollbar,
 *::-webkit-scrollbar {
     display: none;
+}
+
+.ion-page {
+    max-width: 460px !important;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.app-root {
+    background: #222;
+}
+
+.tabs .tab-button-text, 
+.segment .segment-button, {
+    font-family: 'Neon';
+    font-size: 1.4rem;
+    text-transform: none;
 }
